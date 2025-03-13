@@ -1,8 +1,14 @@
 // all global variables here
 let allUserInfor = [];
+
+//sign up
 let sigform = document.querySelector(".sig-form");
 let allInput = sigform.querySelectorAll("input");
 let sigbtn = document.querySelector("button");
+
+//login
+let logform = document.querySelector(".log-form");
+let allLoginInput = logform.querySelectorAll("input");
 
 // get all user infor from local storage
 if (userInfor = localStorage.getItem("allUserInfor") != null) {
