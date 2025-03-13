@@ -9,6 +9,7 @@ let sigbtn = document.querySelector("button");
 //login
 let logform = document.querySelector(".log-form");
 let allLoginInput = logform.querySelectorAll("input");
+let logbtn = document.querySelector("button");
 console.log(allLoginInput);
 
 // get all user infor from local storage
@@ -62,8 +63,11 @@ logform.onsubmit = (e) => {
     }
 
     if (checkUser != undefined) {
-        swal("Làm tốt lắm bro!", "Login Successful", "success");
-        logform.reset();
+        logbtn.innerText = "Processing..."
+        setTimeout(() => {
+            logbtn.innerText = "Login"
+            window.location = "profile/profile.html"
+        }, 1500)
     }
     else {
         swal("Gà quá vậy bro", 'Login Failed, Email or Password is incorrect', 'warning');
