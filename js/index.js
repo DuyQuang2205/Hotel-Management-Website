@@ -9,6 +9,7 @@ let sigbtn = document.querySelector("button");
 //login
 let logform = document.querySelector(".log-form");
 let allLoginInput = logform.querySelectorAll("input");
+console.log(allLoginInput);
 
 // get all user infor from local storage
 if (userInfor = localStorage.getItem("allUserInfor") != null) {
@@ -19,7 +20,7 @@ console.log(allUserInfor);
 //sign up form
 sigform.onsubmit = (e) => {
     e.preventDefault()
-    
+
     if (!checkPasswordMatch()) {
         return;
     }
@@ -43,14 +44,31 @@ sigform.onsubmit = (e) => {
             sigbtn.innerText = "Continue"
         }, 1500)
     }
-    else{
+    else {
         swal("Gà quá vậy bro", 'Registration Failed, Email already register', 'warning');
     }
 }
 
 //login form
+logform.onsubmit = (e) => {
+    e.preventDefault()
+    let checkUser = allUserInfor.find((data) => {
+        return data.Email == allLoginInput[0].value && data.Password == allLoginInput[1].value
+    })
 
+    if (allLoginInput[0].value == "" || allLoginInput[1].value == "") {
+        swal("Gà quá vậy bro", 'Login Failed, Email or Password is empty', 'warning');
+        return;
+    }
 
+    if (checkUser != undefined) {
+        swal("Làm tốt lắm bro!", "Login Successful", "success");
+        logform.reset();
+    }
+    else {
+        swal("Gà quá vậy bro", 'Login Failed, Email or Password is incorrect', 'warning');
+    }
+}
 //check password match
 function checkPasswordMatch() {
     let password = document.getElementById("password").value;
