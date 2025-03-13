@@ -1,16 +1,15 @@
-
-
-// swal("good job bro", 'Registration Success', 'success');
-
-
+// all global variables here
 let allUserInfor = [];
 let sigform = document.querySelector(".sig-form");
 let allInput = sigform.querySelectorAll("input");
+
+// get all user infor from local storage
 if (userInfor = localStorage.getItem("allUserInfor") != null) {
     allUserInfor = JSON.parse(localStorage.getItem("allUserInfor"))
 }
 console.log(allUserInfor);
 
+//sign up form
 sigform.onsubmit = (e) => {
     e.preventDefault()
     
@@ -37,6 +36,7 @@ sigform.onsubmit = (e) => {
     }
 }
 
+//check password match
 function checkPasswordMatch() {
     let password = document.getElementById("password").value;
     let repeatPassword = document.getElementById("passwordrp").value;
@@ -48,7 +48,7 @@ function checkPasswordMatch() {
     return true;
 }
 
-
+//add event listener for eye icon
 document.addEventListener("DOMContentLoaded", function () {
     function togglePassword(inputId, iconId) {
         const passwordField = document.getElementById(inputId);
