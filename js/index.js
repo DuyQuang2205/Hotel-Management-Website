@@ -2,6 +2,7 @@
 let allUserInfor = [];
 let sigform = document.querySelector(".sig-form");
 let allInput = sigform.querySelectorAll("input");
+let sigbtn = document.querySelector("button");
 
 // get all user infor from local storage
 if (userInfor = localStorage.getItem("allUserInfor") != null) {
@@ -27,14 +28,22 @@ sigform.onsubmit = (e) => {
             let key = el.name;
             data[key] = el.value
         }
-        allUserInfor.push(data);
-        localStorage.setItem("allUserInfor", JSON.stringify(allUserInfor));
-        swal("Làm tốt lắm bro", 'Registration Success', 'success');
+        sigbtn.innerText = "Processing..."
+        setTimeout(() => {
+            allUserInfor.push(data)
+            localStorage.setItem("allUserInfor", JSON.stringify(allUserInfor))
+            swal("Thành công!", "Registration Successful", "success");
+            sigform.reset();
+            sigbtn.innerText = "Continue"
+        }, 1500)
     }
     else{
         swal("Gà quá vậy bro", 'Registration Failed, Email already register', 'warning');
     }
 }
+
+//login form
+
 
 //check password match
 function checkPasswordMatch() {
