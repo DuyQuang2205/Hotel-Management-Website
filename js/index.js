@@ -115,3 +115,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById("darkModeBtn");
+
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        toggleBtn.innerHTML = "☀️"; // Light mode: mặt trời
+        localStorage.setItem("theme", "light");
+    } else {
+        body.classList.add("dark-mode");
+        toggleBtn.innerHTML = "🌙"; // Dark mode: mặt trăng
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const toggleBtn = document.getElementById("darkModeBtn");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.innerHTML = "🌙";
+    } else {
+        toggleBtn.innerHTML = "☀️";
+    }
+});

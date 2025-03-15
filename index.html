@@ -23,49 +23,47 @@
 </head>
 
 <body>
+  <div class="fixed-image"></div>
   <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
     <div class="container-fluid">
-      <img src="img/logo.jpg" class="rounded-circle" width="60" alt="" />
-      <a href="#" , class="mx-4 text-white navbar-brand">Hotel Management System</a>
-      <button class="navbar-toggler" data-bs-toggler="collapse" data-bs-target="#Menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse" id="Menu">
-        <ul class="navbar-nav w-100 justify-content-end">
-          <li class="nav-item mx-3 text-white">Home</li>
-          <li class="nav-item mx-3 text-white">Images</li>
-          <li class="nav-item mx-3 text-white">Contact</li>
-        </ul>
-      </div>
+        <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="" />
+        <p href="#" class="mx-4 navbar-brand"  style=" font-family:Arial, Helvetica, sans-serif; color: #ffffff;">Hotel Management System</p>
+        <div class="navbar-collapse collapse" id="Menu">
+            <ul class="navbar-nav w-100 justify-content-end">
+                <!-- Nút chuyển Dark Mode thay vì chữ Home -->
+                <li class="nav-item mx-3">
+                    <button id="darkModeBtn" class="toggle-btn" onclick="toggleDarkMode()">☀️</button>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
-  <br /><br /><br />
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <!-- nav tab -->
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a href="#signup" class="nav-link" data-bs-toggle="tab"> Signup </a>
-          </li>
-          <li class="nav-item">
-            <a href="#login" class="nav-link active" data-bs-toggle="tab"> Login </a>
-          </li>
-        </ul>
-        <!-- nav panes -->
+</nav>
+  <br /><br /><br /><br> <br><br /><br /><br /><br>  <br>
+  <div class="container mt-10">
+    <div class="cow">
+      <div class="col-md-12">
+        <!-- nav panes and nav tab -->
         <div class="auth-box mx-auto p-3 mt-4 mx-4 ">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#signup" class="nav-link" data-bs-toggle="tab"> Signup </a>
+            </li>
+            <li class="nav-item">
+              <a href="#login" class="nav-link active" data-bs-toggle="tab"> Login </a>
+            </li>
+          </ul>
           <div class="tab-content">
             <!-- Sign Up Form -->
             <div class="tab-pane container mt-3" id="signup">
-              <p class="text-center fw-bold signup-title"> Sign Up </p>
+              <p class="text-center fw-bold signup-title" style="color: #000;"> Sign Up </p>
               <form class="sig-form">
-                <input name = "FullName" type="text" placeholder="Full Name" class="mb-3 form-control">
-                <input name = "Email" type="text" placeholder="Email" class="mb-3 form-control">
-                <input name = "PhoneNumber" type="text" placeholder="Phone Number" class="mb-3 form-control">
+                <input name="FullName" type="text" placeholder="Full Name" class="mb-3 form-control">
+                <input name="Email" type="text" placeholder="Email" class="mb-3 form-control">
+                <input name="PhoneNumber" type="text" placeholder="Phone Number" class="mb-3 form-control">
 
                 <!-- Password Field -->
                 <div class="mb-3 position-relative">
-                  <input name = "Password" type="password" id="password" placeholder="Password" class="form-control">
+                  <input name="Password" type="password" id="password" placeholder="Password" class="form-control">
                   <button type="button" id="togglePassword"
                     class="btn position-absolute top-50 end-0 translate-middle-y me-2">
                     <img id="eyeIcon1" src="img/eye2.png" width="25" alt="Toggle Password">
@@ -74,20 +72,36 @@
 
                 <!-- Repeat Password Field -->
                 <div class="mb-3 position-relative">
-                  <input name = "RepeatYourPassword" type="password" id="passwordrp" placeholder="Repeat Your Password" class="form-control">
+                  <input name="RepeatYourPassword" type="password" id="passwordrp" placeholder="Repeat Your Password"
+                    class="form-control">
                   <button type="button" id="togglePasswordrp"
                     class="btn position-absolute top-50 end-0 translate-middle-y me-2">
                     <img id="eyeIcon2" src="img/eye2.png" width="25" alt="Toggle Password Repeat">
                   </button>
                 </div>
+                <div class="social-login mb-3">
+                  <button type="button" class="btn facebook w-50"
+                    style="background-color: #1877f2; color: white; border-radius: 25px;">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
 
-                <button type="submit" class="btn btn-primary w-100"> Continue</button>
+                  <button type="button" class="btn google w-50"
+                    style="background-color: #db4437; color: white; border-radius: 25px;">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn apple w-50"
+                    style="background-color: #000; color: white; border-radius: 25px;">
+                    <i class="fab fa-apple"></i>
+                  </button>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"> Submit </button>
               </form>
             </div>
 
             <!-- Login Form -->
             <div class="tab-pane active container mt-3" id="login">
-              <p class="text-center fw-bold signup-title"> Login </p>
+              <p class="text-center fw-bold signup-title" style="color: #000;"> Login </p>
               <form class="log-form">
                 <input type="text" placeholder="Email" class="mb-3 form-control">
 
@@ -98,19 +112,35 @@
                     <img id="eyeIcon3" src="img/eye2.png" width="25" alt="Toggle Password">
                   </button>
                 </div>
+                <div class="social-login mb-3">
+                  <button type="button" class="btn facebook w-50"
+                    style="background-color: #1877f2; color: white; border-radius: 25px;">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn google w-50"
+                    style="background-color: #db4437; color: white; border-radius: 25px;">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn apple w-50"
+                    style="background-color: #000; color: white; border-radius: 25px;">
+                    <i class="fab fa-apple"></i>
+                  </button>
+                </div>
+
+                <!-- Chỉ nút Login mới có type="submit" -->
                 <button type="submit" class="btn btn-primary w-100"> Login</button>
-              </form>
             </div>
+            </form>
           </div>
-        </div>
-        <div class="fixed-image">
-          <img src="img/mydieu.png" class="w-100" alt="">
         </div>
       </div>
     </div>
-    <!-- Start Js -->
-    <script src="js/index.js"></script>
-    <!-- End Js -->   
+  </div>
+  <!-- Start Js -->
+  <script src="js/index.js"></script>
+  <!-- End Js -->
 </body>
 
 </html>

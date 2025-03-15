@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <!-- Start CSS link -->
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/animate.css">
+    <link rel="stylesheet" href="../profile/CSS/profileIndex.css">
+    <!-- End CSS link -->
+
+    <!-- Start JS link -->
+    <script src="../js/bootstrap.js"></script>
+    <script type="module" src="../js/sweetalert.js"></script>
+    <!-- End JS link -->
+    <title>Profile</title>
 </head>
 <body>
-    <h1>Hello Moi Nguoi</h1>
+
+    <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
+        <div class="container-fluid">
+            <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="" />
+            <p href="#" class="mx-4 navbar-brand"  style=" font-family:Arial, Helvetica, sans-serif; color: #ffffff;">Hotel Management System</p>
+            <div class="navbar-collapse collapse" id="Menu">
+                <ul class="navbar-nav w-100 justify-content-end">
+                    <!-- Nút chuyển Dark Mode thay vì chữ Home -->
+                    <li class="nav-item mx-3">
+                        <button id="darkModeBtn" class="toggle-btn" onclick="toggleDarkMode()">☀️</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+<!-- Start JS link -->
+<script src="../profile/js/profileIndex.js"></script>
+
 </body>
 </html>
