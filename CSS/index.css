@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,28 +6,25 @@
 }
 
 body {
-    background-image: url('../img/mydieu.png'); /* Đảm bảo đường dẫn đúng */
-    background-size: cover; /* Ảnh phủ toàn màn hình */
+    background-image: url('../img/mydieu.png');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Ảnh cố định khi cuộn trang */
-    
+    background-attachment: fixed;
+
 }
 
-/* Dark Mode */
 body.dark-mode {
-    background-color: rgb(23, 23, 23); /* Màu nền tối */
-    color: white; /* Chữ màu trắng */
+    background-color: rgb(23, 23, 23);
+    color: white;
 }
 
-
-/* Nút chuyển đổi */
 .toggle-btn {
     width: 40px;
     height: 40px;
     border: none;
     cursor: pointer;
-    background-color: transparent; /* Nền trong suốt */
+    background-color: transparent;
     color: black;
     border-radius: 50%;
     display: flex;
@@ -37,12 +34,10 @@ body.dark-mode {
     transition: transform 0.2s;
 }
 
-/* Khi hover */
 .toggle-btn:hover {
     transform: scale(1.2);
 }
 
-/* Dark mode - đổi màu icon */
 body.dark-mode .toggle-btn {
     color: white;
 }
@@ -57,16 +52,16 @@ link[rel="icon"] {
     font-family: "Cinzel", Verdana, Arial, Helvetica, sans-serif;
 }
 
-.navbar{
+.navbar {
     background-image: linear-gradient(#e458e2, #58cbd3);
 }
 
-.navbar-brand{
+.navbar-brand {
     font-size: 30px !important;
     font-weight: bold;
 }
 
-.nav-item{
+.nav-item {
     font-size: 22px !important;
     font-weight: bold;
 }
@@ -75,21 +70,28 @@ link[rel="icon"] {
     background-image: linear-gradient(#58cbd3, #e458e2) !important;
 }
 
-.nav-tabs .nav-link.active{
+.nav-tabs .nav-link.active {
     background-image: linear-gradient(#58cbd3, #e458e2) !important;
     color: rgb(255, 255, 255);
 }
 
 .auth-box {
-    margin-bottom: 100px; /* Cách dòng "Login" và "Sign Up" 10px */
+    margin-bottom: 100px;
+    /* Cách dòng "Login" và "Sign Up" 10px */
     margin-left: 500px;
-    max-width: 500px; /* Giới hạn chiều rộng */
-    background: white; /* Màu nền trắng */
-    border-radius: 20px; /* Bo góc nhẹ */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    max-width: 500px;
+    /* Giới hạn chiều rộng */
+    background: white;
+    /* Màu nền trắng */
+    border-radius: 20px;
+    /* Bo góc nhẹ */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng */
     padding: 30px;
     text-align: center;
 }
+
+
 
 
 .container {
@@ -100,8 +102,7 @@ link[rel="icon"] {
 .social-login {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Khoảng cách giữa các nút */
+    gap: 20px;
+    /* Khoảng cách giữa các nút */
     margin-top: 15px;
 }
-
-

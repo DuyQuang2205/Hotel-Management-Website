@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../img/logo.jpg" />
+    
     <!-- Start CSS link -->
-    <link rel="stylesheet" href="../CSS/bootstrap.css">
-    <link rel="stylesheet" href="../CSS/animate.css">
-    <link rel="stylesheet" href="../profile/CSS/profileIndex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../CSS/bootstrap.css" />
+    <link rel="stylesheet" href="../CSS/animate.css" />
+    <link rel="stylesheet" href="../profile/CSS/profileIndex.css" />
     <!-- End CSS link -->
 
     <!-- Start JS link -->
@@ -16,26 +19,47 @@
     <!-- End JS link -->
     <title>Profile</title>
 </head>
-<body>
 
+<body>
     <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
         <div class="container-fluid">
             <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="" />
-            <p href="#" class="mx-4 navbar-brand"  style=" font-family:Arial, Helvetica, sans-serif; color: #ffffff;">Hotel Management System</p>
+            <button id="darkModeBtn" class="toggle-btn mx-3" onclick="toggleDarkMode()">☀️</button>
+            <div class="input-group mx-4 w-50">
+                <span class="input-group-text text-white btn-primary">Search</span>
+                <input type="search" class="form-control" placeholder="Search" name="" id="">
+            </div>
             <div class="navbar-collapse collapse" id="Menu">
                 <ul class="navbar-nav w-100 justify-content-end">
-                    <!-- Nút chuyển Dark Mode thay vì chữ Home -->
                     <li class="nav-item mx-3">
-                        <button id="darkModeBtn" class="toggle-btn" onclick="toggleDarkMode()">☀️</button>
+                        <a href="">Home</a>
                     </li>
+                    <li class="nav-item mx-3">
+                        <a href="">RoomDiagram</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="">BookingGroup</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="">MemberShip</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="">Setting</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a href="">Report</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <button class=" input-group-text btn-primary border-0">Log out</button>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
-    
 
-<!-- Start JS link -->
-<script src="../profile/js/profileIndex.js"></script>
-
+    <!-- Start JS link -->
+    <script src="../profile/js/profileIndex.js"></script>
 </body>
+
 </html>

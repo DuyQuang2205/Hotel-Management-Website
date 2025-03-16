@@ -40,7 +40,7 @@ sigform.onsubmit = (e) => {
         setTimeout(() => {
             allUserInfor.push(data)
             localStorage.setItem("allUserInfor", JSON.stringify(allUserInfor))
-            swal("Thành công!", "Registration Successful", "success");
+            swal("Làm Tốt lắm bro!", "Registration Successful", "success");
             sigform.reset();
             sigbtn.innerText = "Continue"
         }, 1500)
@@ -67,6 +67,8 @@ logform.onsubmit = (e) => {
         setTimeout(() => {
             logbtn.innerText = "Login"
             window.location = "profile/profile.html"
+            checkUser.Password = "Tìm mật khẩu con cặc";
+            sessionStorage.setItem("__au__",JSON.stringify(checkUser))
         }, 1500)
     }
     else {

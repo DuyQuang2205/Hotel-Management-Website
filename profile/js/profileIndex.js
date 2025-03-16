@@ -1,3 +1,11 @@
+//All global variables here
+
+
+//Check user login or not
+if(sessionStorage.getItem("__au__") == null) {
+    window.location.href = "../index.html";
+}
+
 function toggleDarkMode() {
     const body = document.body;
     const toggleBtn = document.getElementById("darkModeBtn");
