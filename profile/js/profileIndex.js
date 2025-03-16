@@ -1,9 +1,20 @@
 //All global variables here
-
+let UserInfor = [];
+let logbtn = document.querySelector(".logout-btn");
 
 //Check user login or not
 if(sessionStorage.getItem("__au__") == null) {
     window.location.href = "../index.html";
+}
+UserInfor = JSON.parse(sessionStorage.getItem("__au__"));
+
+//Logout
+logbtn.onclick = () => {
+    logbtn.innerText = "Processing..."
+    setTimeout(() => {
+        sessionStorage.removeItem("__au__");
+        window.location.href = "../index.html";
+    }, 1000)
 }
 
 function toggleDarkMode() {
