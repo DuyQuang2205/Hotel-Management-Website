@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../img/logo.jpg" />
-    
+
     <!-- Start CSS link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="../CSS/bootstrap.css" />
     <link rel="stylesheet" href="../CSS/animate.css" />
     <link rel="stylesheet" href="../profile/CSS/profileIndex.css" />
@@ -18,48 +20,147 @@
     <script type="module" src="../js/sweetalert.js"></script>
     <!-- End JS link -->
     <title>Profile</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
-        <div class="container-fluid">
-            <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="" />
-            <button id="darkModeBtn" class="toggle-btn mx-3" onclick="toggleDarkMode()">☀️</button>
-            <div class="input-group mx-4 w-50">
-                <span class="input-group-text text-white btn-primary">Search</span>
-                <input type="search" class="form-control" placeholder="Search" name="" id="">
-            </div>
-            <div class="navbar-collapse collapse" id="Menu">
-                <ul class="navbar-nav w-100 justify-content-end">
-                    <li class="nav-item mx-3">
-                        <a href="">Home</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a href="">RoomDiagram</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a href="">BookingGroup</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a href="">MemberShip</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a href="">Setting</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a href="">Report</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <button class=" btn-primary logout-btn input-group-text border-0">Log out</button>
-                    </li>
-                    
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <img src="../img/logo.jpg" class="rounded-circle" width="60" alt="" />
+        <div class="input-group mx-4 w-50">
+          <span class="input-group-text text-white btn-primary">Search</span>
+          <input type="search" class="form-control" placeholder="Search" name="" id="" />
         </div>
+        <div class="navbar-collapse collapse" id="Menu">
+          <ul class="navbar-nav w-100 justify-content-end">
+            <li class="nav-item mx-3">
+              <a href="#booking">Booking</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#cashier">Cashier</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#inhouse">InHouse</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#archive">Archive</a>
+            </li>
+            <li class="nav-item mx-3">
+              <button class="btn-primary logout-btn input-group-text border-0">Log out</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
+    <br><br><br><br><br><br>
+    <div style="width: 100vw; padding: 20px;">
+      <div class="tab-content">
+          <div class="tab-pane active mt-3" id="booking">
+              <div class="d-flex justify-content-start">
+                  <button
+                    data-bs-toggle="modal" 
+                    data-bs-target="#registration-modal"
+                  class="btn btn-primary text-white mx-2 w-25">Register</button>
+                  <button class="btn btn-primary text-white mx-2 w-25">Print</button>
+                  <button class="btn btn-primary text-white mx-2 w-25">Total Bookings</button>
+              </div>
+              <br><br>
+              <h1>All Bookings Data</h1>
+              <div style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr</th>
+                            <th>Location</th>
+                            <th>Room No</th>
+                            <th>FullName</th>
+                            <th>Check in</th>
+                            <th>Check out</th>
+                            <th>Number of People</th>
+                            <th>Notice</th>
+                            <th>Registered At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>HCM</td>
+                            <td>10</td>
+                            <td>Khong Duy Quang</td>
+                            <td>22/05/2025</td>
+                            <td>25/05/2025</td>
+                            <td>2</td>
+                            <td>bla bla</td>
+                            <td>11:00pm</td>
+                            <td>
+                                <button class="btn" style="background-color: transparent;">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn" style="background-color: transparent;">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                                <button class="btn" style="background-color: transparent;">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+          </div>
+      </div>
+  </div>
+  
+  <!-- Start modal code -->
+   <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Registration Form</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="body-body p-4">
+          <form class="reg-form">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" placeholder="FullName" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Agency" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Number of People" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Room" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Check in</label>
+                <input type="date" placeholder="Check in Date" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Check out</label>
+                <input type="date" placeholder="Check in Out" class="mb-3 form-control">
+              </div>
+              <div>
+                <input type="text" placeholder="Price" class="mb-3 form-control">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" placeholder="Notice"></textarea>
+              </div>
+              <div class="row mb-3">
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+         </div>
+       </div>
+      </div>
+    </div>
+  <!-- End modal code -->
 
     <!-- Start JS link -->
     <script src="../profile/js/profileIndex.js"></script>
-</body>
-
+  </body>
 </html>

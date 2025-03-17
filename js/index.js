@@ -20,35 +20,44 @@ console.log(allUserInfor);
 
 //sign up form
 sigform.onsubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!checkPasswordMatch()) {
         return;
     }
 
+    let emailInput = allInput[1].value.trim(); // Lấy giá trị email từ form và loại bỏ khoảng trắng thừa
+
+    // Kiểm tra định dạng email (chỉ cho phép @gmail.com)
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!emailRegex.test(emailInput)) {
+        swal("Lỗi rồi bro!", "Vui lòng nhập email có đuôi @gmail.com", "error");
+        return;
+    }
+
     let checkEmail = allUserInfor.find((data) => {
-        return data.Email == allInput[1].value
-    })
+        return data.Email === emailInput;
+    });
 
     if (checkEmail == undefined) {
         let data = {};
         for (let el of allInput) {
             let key = el.name;
-            data[key] = el.value
+            data[key] = el.value;
         }
-        sigbtn.innerText = "Processing..."
+        sigbtn.innerText = "Processing...";
         setTimeout(() => {
-            allUserInfor.push(data)
-            localStorage.setItem("allUserInfor", JSON.stringify(allUserInfor))
+            allUserInfor.push(data);
+            localStorage.setItem("allUserInfor", JSON.stringify(allUserInfor));
             swal("Làm Tốt lắm bro!", "Registration Successful", "success");
             sigform.reset();
-            sigbtn.innerText = "Continue"
-        }, 1500)
+            sigbtn.innerText = "Continue";
+        }, 1500);
+    } else {
+        swal("Gà quá vậy bro", 'Registration Failed, Email already registered', 'warning');
     }
-    else {
-        swal("Gà quá vậy bro", 'Registration Failed, Email already register', 'warning');
-    }
-}
+};
+
 
 //login form
 logform.onsubmit = (e) => {
@@ -67,7 +76,7 @@ logform.onsubmit = (e) => {
         setTimeout(() => {
             logbtn.innerText = "Login"
             window.location = "profile/profile.html"
-            checkUser.Password = "Tìm mật khẩu con cặc";
+            checkUser.Password = "Tìm mật khẩu con cặca";
             sessionStorage.setItem("__au__",JSON.stringify(checkUser))
         }, 1500)
     }

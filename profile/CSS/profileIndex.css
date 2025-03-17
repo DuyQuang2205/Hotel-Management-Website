@@ -91,3 +91,20 @@ a:hover {
     text-decoration: none;
 }
 
+.table {
+    width: 100%; /* Kéo dài bảng tối đa */
+    table-layout: auto; /* Cột tự điều chỉnh kích thước */
+    border-collapse: collapse; /* Gộp viền bảng */
+}
+
+.table th, .table td {
+    padding: 12px; /* Khoảng cách nội dung */
+    border: 1px solid #ddd; /* Viền nhẹ */
+    text-align: center; /* Căn giữa chữ */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.table thead {
+    background-color: #f8f9fa; /* Màu nền cho header */
+    font-weight: bold;
+}
