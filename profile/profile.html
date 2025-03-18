@@ -66,7 +66,7 @@
               <br><br>
               <h1>All Bookings Data</h1>
               <div style="max-height: 400px; overflow-y: auto;">
-                <table class="table table-bordered">
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Sr</th>
@@ -104,6 +104,28 @@
                                 </button>
                             </td>
                         </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>HCM</td>
+                          <td>10</td>
+                          <td>Khong Duy Quang</td>
+                          <td>22/05/2025</td>
+                          <td>25/05/2025</td>
+                          <td>2</td>
+                          <td>bla bla</td>
+                          <td>11:00pm</td>
+                          <td>
+                              <button class="btn btn-secondary">
+                                  <i class="fa fa-edit"></i>
+                              </button>
+                              <button class="btn btn-success">
+                                  <i class="fa fa-check"></i>
+                              </button>
+                              <button class="btn btn-danger">
+                                  <i class="fa fa-trash"></i>
+                              </button>
+                          </td>
+                      </tr>
                     </tbody>
                 </table>
             </div>
@@ -121,10 +143,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
         </div>
         <div class="body-body p-4">
-          <form class="reg-form">
+          <form class="booking-form">
             <div class="row">
               <div class="col-md-6">
-                <input type="text" placeholder="FullName" class="mb-3 form-control">
+                <input name="totalPeople" type="text" placeholder="FullName" class="mb-3 form-control">
               </div>
               <div class="col-md-6">
                 <input type="text" placeholder="Agency" class="mb-3 form-control">
@@ -137,20 +159,21 @@
               </div>
               <div class="col-md-6">
                 <label>Check in</label>
-                <input type="date" placeholder="Check in Date" class="mb-3 form-control">
+                <input name="checkIn" type="date" placeholder="Check in Date" class="mb-3 form-control">
               </div>
               <div class="col-md-6">
                 <label>Check out</label>
-                <input type="date" placeholder="Check in Out" class="mb-3 form-control">
+                <input name="checkOut" type="date" placeholder="Check in Out" class="mb-3 form-control">
               </div>
               <div>
                 <input type="text" placeholder="Price" class="mb-3 form-control">
               </div>
               <div class="mb-3">
-                <textarea class="form-control" placeholder="Notice"></textarea>
+                <textarea name="Notice" class="form-control" placeholder="Notice"></textarea>
               </div>
               <div class="row mb-3">
-                <button class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
               </div>
             </div>
           </form>
