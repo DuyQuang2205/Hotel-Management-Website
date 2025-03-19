@@ -1,17 +1,20 @@
 //All global variables here
-let UserInfor = [];
-let allBookingData = [];
+let userInfor = [];
+let user;
+let allBData = [];
 let logbtn = document.querySelector(".logout-btn");
 let bookingForm = document.querySelector(".booking-form");
 let allBInput = bookingForm.querySelectorAll("input");
 let bTextarea = bookingForm.querySelector("textarea");
-console.log(bTextarea);
+let bCloseBtn = document.querySelector("b-modal-close-btn");
 
 //Check user login or not
 if (sessionStorage.getItem("__au__") == null) {
   window.location.href = "../index.html";
 }
-UserInfor = JSON.parse(sessionStorage.getItem("__au__"));
+userInfor = JSON.parse(sessionStorage.getItem("__au__"));
+//FIX RIGHT THERE
+user = userInfor.email.split("@")[0];
 
 //Logout
 logbtn.onclick = () => {
@@ -19,7 +22,7 @@ logbtn.onclick = () => {
   setTimeout(() => {
     sessionStorage.removeItem("__au__");
     window.location.href = "../index.html";
-  }, 1000);
+  }, 3000);
 };
 
 //start booking code
@@ -31,8 +34,15 @@ bookingForm.onsubmit = (e) => {
     let value = el.value;
     data[key] = value;
   }
-  console.log(data);
+  //FIX RIGHT THERE
+  allBData.push(data);
+  localStorage.setItem(user + "_allBData", JSON.stringify(allBData));
+  swal("gút chóp bro", "bookking success", "success");
+  bookingForm.reset("");
+  bCloseBtn.click();
 };
+
+//just_allBData
 
 function toggleDarkMode() {
   const body = document.body;
