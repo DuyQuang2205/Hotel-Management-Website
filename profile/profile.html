@@ -170,11 +170,60 @@
   </div>
   
   <!-- Start modal code -->
-   <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+   <div class="modal fade animate__animated animate__zoomIn" id="registration-modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5>Registration Form</h1>
+            <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="body-body p-4">
+          <form class="booking-form">
+            <div class="row">
+              <div class="col-md-6">
+                <input name="totalPeople" type="text" placeholder="FullName" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Agency" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Number of People" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Room" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Check in</label>
+                <input name="checkIn" type="date" placeholder="Check in Date" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Check out</label>
+                <input name="checkOut" type="date" placeholder="Check in Out" class="mb-3 form-control">
+              </div>
+              <div>
+                <input type="text" placeholder="Price" class="mb-3 form-control">
+              </div>
+              <div class="mb-3">
+                <textarea name="Notice" class="form-control" placeholder="Notice"></textarea>
+              </div>
+              <div class="row mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-success">Update</button>
+              </div>
+            </div>
+          </form>
+         </div>
+       </div>
+      </div>
+    </div>
+  <!-- End modal code -->
+
+  <!-- Start modal code -->
+  <div class="modal fade animate__animated animate__zoomIn" id="inhouse-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>In House Form</h1>
             <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
         </div>
         <div class="body-body p-4">
