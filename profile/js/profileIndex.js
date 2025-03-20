@@ -68,3 +68,24 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.innerHTML = "☀️";
   }
 });
+
+function showTab(tabId) {
+  document.querySelectorAll(".tab-pane").forEach((tab) => {
+    tab.classList.remove("active", "show");
+  });
+
+  let selectedTab = document.getElementById(tabId);
+  if (selectedTab) {
+    selectedTab.classList.add("active", "show");
+  }
+
+  // Cập nhật URL hash để giữ tab khi reload
+  history.pushState(null, null, `#${tabId}`);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let hash = window.location.hash.substring(1);
+  if (hash) {
+    showTab(hash);
+  }
+});
