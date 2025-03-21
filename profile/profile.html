@@ -54,6 +54,7 @@
     <br><br><br><br><br><br>
     <div style="width: 100vw; padding: 20px;">
       <div class="tab-content">
+          <!-- BookingTab -->
           <div class="tab-pane fade show active mt-3" id="booking">
               <div class="d-flex justify-content-start">
                   <button
@@ -139,7 +140,7 @@
                     data-bs-target="#inhouse-modal"
                   class="btn btn-primary action-btn in-house-reg-btn text-white mx-2 w-25">Register</button>
                   <button class="btn btn-primary action-btn text-white mx-2 w-25">Print</button>
-                  <button class="btn btn-primary action-btn text-white mx-2 w-25">Total Bookings</button>
+                  <button class="btn btn-primary action-btn text-white mx-2 w-25">Total Inhouse</button>
               </div>
               <br><br>
               <h1>All In House Data</h1>
@@ -165,15 +166,11 @@
                 </table>
               </div>
             </div>
-            <!--  -->
+            <!-- ArchiveTab -->
             <div class="tab-pane fade mt-3" id="archive">
               <div class="d-flex justify-content-start">
-                  <button
-                    data-bs-toggle="modal" 
-                    data-bs-target="#inhouse-modal"
-                  class="btn btn-primary action-btn in-house-reg-btn text-white mx-2 w-25">Register</button>
                   <button class="btn btn-primary action-btn text-white mx-2 w-25">Print</button>
-                  <button class="btn btn-primary action-btn text-white mx-2 w-25">Total Bookings</button>
+                  <button class="btn btn-primary action-btn text-white mx-2 w-25">Total Archive</button>
               </div>
               <br><br>
               <h1>All Archive Data</h1>
@@ -199,11 +196,43 @@
                 </table>
               </div>
             </div>
+            <!-- CashierTab -->
+            <div class="tab-pane fade mt-3" id="cashier">
+              
+              <br><br>
+              <h1>All Cashier Data</h1>
+              <div style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr</th>
+                            <th>Room No</th>
+                            <th>FullName</th>
+                            <th>Amount</th>
+                            <th>Cashier</th>
+                            <th>Date/Time</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cashier-list">
+
+                    </tbody>
+                </table>
+              </div>
+              <div class="d-flex justify-content-start">
+                <button 
+                data-bs-toggle="modal"
+                data-bs-target="#cashier-modal"
+                class="btn btn-primary action-btn text-white mx-2 w-25">Add Cash</button>
+                <button class="btn btn-primary action-btn text-white mx-2 w-25">Close Cashier</button>
+                <button class="btn btn-primary action-btn text-white mx-2 w-25">Archive Cashier</button>
+                <button class="btn btn-primary action-btn text-white mx-2 w-25">Print</button>
+            </div>
+            </div>
       </div>
     </div>
   </div>
   
-  <!-- Start register booking modal code -->
+  <!-- Start booking modal code -->
    <div class="modal fade animate__animated animate__zoomIn" id="registration-modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -252,7 +281,7 @@
     </div>
   <!-- End modal code -->
 
-  <!-- Start register inhouse modal code -->
+  <!-- Start inhouse modal code -->
   <div class="modal fade animate__animated animate__zoomIn" id="inhouse-modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -292,6 +321,40 @@
               <div class="row mb-3">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-success">Update</button>
+              </div>
+            </div>
+          </form>
+         </div>
+       </div>
+      </div>
+    </div>
+  <!-- End modal code -->
+   
+  <!-- Cashier modal code -->
+  <div class="modal fade animate__animated animate__zoomIn" id="cashier-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Cashier Form</h1>
+            <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="body-body p-4">
+          <form class="inhouse-form">
+            <div class="row">
+              <div class="col-md-6">
+                <input name="totalPeople" type="text" placeholder="FullName" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input name="amount" type="number" placeholder="Amount" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input name="cashierName" type="text" readonly value="Binh Thuan" class="mb-3 form-control">
+              </div>
+              <div class="col-md-6">
+                <input name="roomNo" type="number" placeholder="Room No" class="mb-3 form-control">
+              </div>
+              <div class="row mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
           </form>
