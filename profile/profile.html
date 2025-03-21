@@ -371,45 +371,35 @@
        </div>
       </div>
     </div>
-  <!-- End modal code -->
-
-  <!-- Cashier modal code -->
+  
   <div class="modal fade animate__animated animate__zoomIn" id="cashier-arch-modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5>Archive Cash</h1>
+            <button class="btn action-btn mx-5 mb-1">Print</button>
             <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
         </div>
         <div class="body-body p-4">
-          <div>
-            <h1>All Cashier Data</h1>
-              <div style="max-height: 400px; overflow-y: auto;">
+              <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Sr</th>
-                            <th>Room No</th>
                             <th>Cashier</th>
                             <th>Date/Time</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
-                    <tbody class="cashier-list">
-                      <tr>
-                        <td>1</td>
-                        <td>18</td>
-                        <td>Tiến</td>
-                        <td>18/12/2004</td>
-                        <td>2004</td>
-                      </tr>
+                    <tbody class="cashier-arch-list">
+
                     </tbody>
                 </table>
                 <div class="d-flex mt-5 align-items-center justify-content-between">
                   <h1>Total</h1>
-                  <h1 class="total" style="margin-right: 100px;">6000</h1>
+                  <h1 class="arch-total" style="margin-right: 100px;"></h1>
                 </div>
-          </div>
+              </div>
          </div>
        </div>
       </div>
