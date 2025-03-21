@@ -207,16 +207,25 @@
                         <tr>
                             <th>Sr</th>
                             <th>Room No</th>
-                            <th>FullName</th>
-                            <th>Amount</th>
                             <th>Cashier</th>
                             <th>Date/Time</th>
+                            <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody class="cashier-list">
-
+                      <tr>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>Tiến</td>
+                        <td>18/12/2004</td>
+                        <td>2004</td>
+                      </tr>
                     </tbody>
                 </table>
+                <div class="d-flex mt-5 align-items-center justify-content-between">
+                  <h1>Total</h1>
+                  <h1 class="total" style="margin-right: 100px;">6000</h1>
+                </div>
               </div>
               <div class="d-flex justify-content-start">
                 <button 
@@ -224,7 +233,10 @@
                 data-bs-target="#cashier-modal"
                 class="btn btn-primary action-btn text-white mx-2 w-25">Add Cash</button>
                 <button class="btn btn-primary action-btn text-white mx-2 w-25">Close Cashier</button>
-                <button class="btn btn-primary action-btn text-white mx-2 w-25">Archive Cashier</button>
+                <button 
+                data-bs-toggle="modal"
+                data-bs-target="#cashier-arch-modal"
+                class="btn btn-primary action-btn text-white mx-2 w-25">Archive Cashier</button>
                 <button class="btn btn-primary action-btn text-white mx-2 w-25">Print</button>
             </div>
             </div>
@@ -339,16 +351,13 @@
             <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
         </div>
         <div class="body-body p-4">
-          <form class="inhouse-form">
+          <form class="cashier-form">
             <div class="row">
-              <div class="col-md-6">
-                <input name="totalPeople" type="text" placeholder="FullName" class="mb-3 form-control">
-              </div>
               <div class="col-md-6">
                 <input name="amount" type="number" placeholder="Amount" class="mb-3 form-control">
               </div>
               <div class="col-md-6">
-                <input name="cashierName" type="text" readonly value="Binh Thuan" class="mb-3 form-control">
+                <input name="cashierName" type="text" readonly class="mb-3 form-control">
               </div>
               <div class="col-md-6">
                 <input name="roomNo" type="number" placeholder="Room No" class="mb-3 form-control">
@@ -358,6 +367,49 @@
               </div>
             </div>
           </form>
+         </div>
+       </div>
+      </div>
+    </div>
+  <!-- End modal code -->
+
+  <!-- Cashier modal code -->
+  <div class="modal fade animate__animated animate__zoomIn" id="cashier-arch-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Archive Cash</h1>
+            <button type="button" class="btn-close b-modal-close-btn" data-bs-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="body-body p-4">
+          <div>
+            <h1>All Cashier Data</h1>
+              <div style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr</th>
+                            <th>Room No</th>
+                            <th>Cashier</th>
+                            <th>Date/Time</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cashier-list">
+                      <tr>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>Tiến</td>
+                        <td>18/12/2004</td>
+                        <td>2004</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex mt-5 align-items-center justify-content-between">
+                  <h1>Total</h1>
+                  <h1 class="total" style="margin-right: 100px;">6000</h1>
+                </div>
+          </div>
          </div>
        </div>
       </div>
