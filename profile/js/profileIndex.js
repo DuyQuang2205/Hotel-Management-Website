@@ -13,8 +13,6 @@ if (sessionStorage.getItem("__au__") == null) {
   window.location.href = "../index.html";
 }
 userInfor = JSON.parse(sessionStorage.getItem("__au__"));
-//FIX RIGHT THERE
-user = userInfor.email.split("@")[0];
 
 //Logout
 logbtn.onclick = () => {
@@ -22,7 +20,7 @@ logbtn.onclick = () => {
   setTimeout(() => {
     sessionStorage.removeItem("__au__");
     window.location.href = "../index.html";
-  }, 3000);
+  }, 1000);
 };
 
 //start booking code
